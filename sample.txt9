@@ -1,0 +1,16 @@
+#!/bin/bash
+
+message1="this is my first shellscript"
+message2="hello prava"
+message3="welcome to the script!"
+
+value=$1
+value=$2
+
+echo $message1
+
+echo $message2
+
+echo $message3
+
+
