@@ -1,0 +1,20 @@
+# Use the official Jenkins LTS image as the base image
+FROM jenkins/jenkins:lts
+
+# Skip the initial setup wizard by setting the environment variable
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+
+# Install additional plugins if needed
+# Example: Install the Blue Ocean plugin
+RUN /usr/local/bin/install-plugins.sh blueocean
+
+# Expose the HTTP and agent ports
+EXPOSE 8080 50000
+
+# Copy additional configurations if needed
+# Example: Copy Jenkins job DSL scripts
+# COPY jobs/ /usr/share/jenkins/ref/jobs/
+
+# Example: Copy seed job DSL script
+# COPY seed-job/ /usr/share/jenkins/ref/init.groovy.d/
+
